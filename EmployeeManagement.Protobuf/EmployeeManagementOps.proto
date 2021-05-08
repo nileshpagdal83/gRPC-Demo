@@ -1,0 +1,47 @@
+syntax  =  "proto3";
+package EmployeeManagement.Protobuf;
+import "google/protobuf/wrappers.proto";
+
+service EmployeeManagementOpsService{
+    rpc GetEmployeeList(EmployeeListRequest) returns (EmployeeListResponse){}
+    rpc GetEmployeeById(EmployeeByIdRequest) returns (EmployeeResponse){}
+    rpc AddEmployee(EmployeeRequest) returns (AddEmployeeResponse){}
+}
+
+message EmployeeMessage {
+	int32 Id = 1;
+	google.protobuf.StringValue FirstName = 2;
+	google.protobuf.StringValue LastName = 3;
+	int32 DepartmentId = 4;
+	google.protobuf.StringValue Address = 5;
+}
+
+message EmployeeListRequest {}
+
+message EmployeeListResponse {
+	repeated EmployeeMessage EmployeeList = 1;
+}
+
+message EmployeeByIdRequest {
+	int32 Id = 1;
+}
+
+message EmployeeResponse {
+	EmployeeMessage Employee = 1;
+}
+
+message EmployeeRequest {
+	EmployeeMessage Employee = 1;
+}
+
+message AddEmployeeResponse {
+	bool IsAdded = 1;
+}
+
+
+
+
+
+
+
+
