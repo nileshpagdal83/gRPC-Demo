@@ -1,2 +1,2 @@
 # gRPC-Demo
-A small client-server gRPC demo app using C# .NET
+A small gRPC client-server demo app using C# .NET
